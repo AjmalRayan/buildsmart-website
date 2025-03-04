@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container-fluid"> <!-- Changed from "container" to "container-fluid" -->
+        <a class="navbar-brand" href="#">
+            <img src="images/sa_builders.jpg" alt="Your Logo" height="50"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#our team">Our Team</a></li>
+                <li class="nav-item"><a class="nav-link" href="#construction package">Construction Package</a></li>
+                <li class="nav-item"><a class="nav-link" href="#design package">Design Package</a></li>
+                <li class="nav-item"><a class="nav-link" href="#our works">Our Works</a></li>
+                <li class="nav-item"><a class="nav-link" href="#interior">Interior</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact us">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <div class="slideshow">
+            <img src="images/first_image.jpg" class="active" alt="Construction Image 1">
+            <img src="images/kerala-traditional-house-1.jpg" alt="Construction Image 2">
+            <img src="images/ultra_modern.jpeg" alt="Construction Image 3">
+            <img src="images/home_swim2.jpg" alt="Construction Image 3">
+            <img src="images/luxury_villa3.jpeg" alt="Construction Image 3">
+        </div>
+
+        <div class="overlay"></div>
+            <div class="hero-text">GET YOUR DREAM HOME CONSTRUCTED BY THE EXPERTS</div>
+            <div class="hero-tagline">A RESIDENTAL CONSTRUCTION COMPANY</div>
+            <div class="hero-content text-center">
+        </div>
+
+         <!-- Slideshow Indicators (Dots) -->
+         <div class="slideshow-indicators">
+            <span class="dot active" onclick="jumpToSlide(0)"></span>
+            <span class="dot" onclick="jumpToSlide(1)"></span>
+            <span class="dot" onclick="jumpToSlide(2)"></span>
+            <span class="dot" onclick="jumpToSlide(3)"></span>
+            <span class="dot" onclick="jumpToSlide(4)"></span>
+        </div>
+    </header>
+
+    <!-- Location Section -->
+    <section class="locations">
+        <h2>Visit Our Experience Center @</h2>
+        <div class="location-cards">
+        <div class="location-card">PATTUKKOTTAI</div>
+        <div class="location-card">ADIRAMPATTINAM</div>
+        <div class="location-card">MADUKKUR</div>
+        <div class="location-card">MANARGUDI</div>
+    </div>
+    </section>
+
+
+    <div class="container">
+        <div class="heading">Luxury Home Construction Services</div>
+        
+        <div class="content-box">
+            <div class="yellow-box">
+                <span>04</span>
+                <p>YEARS</p>
+                <p>EXPERIENCE</p>
+            </div>
+            <div class="text-content">
+                <h1>HOME</h1>
+                <h1>CONSTRUCTION</h1>
+                <h2>EXPERTS !!</h2>
+                
+                <div class="button-group">
+                    <a href="#" class="btn">Company Registration Certificate</a><br>
+                    <a href="#" class="btn">Company Pancard</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="first-gallery">
+            <img src="images/archi2.avif" alt="Construction Project 1">
+        </div>
+    </div>
+
+
+
+    <section class="construction-packages">
+        <h2 class="animate-heading">Our Home Construction Packages</h2>
+        <div class="package-buttons">
+            <div class="package">BASIC PACKAGE</div>
+            <div class="package">STANDARD PACKAGE</div>
+            <div class="package">PREMIUM PACKAGE</div>
+            <div class="package">ULTRA LUXURY</div>
+        </div>
+        <button class="view-all">View All Packages</button>
+        <p class="note">* Note: Minimum overall built-up area should be 2000 sqft.</p>
+    </section>
+
+
+
+
+    <div class="center-content">
+        <h2>Home Construction Cost Calculator (2025)</h2>
+        <button class="yellow-button">Arrive Your Home Construction Cost Here</button>
+    </div>
+    <div class="animated-line"></div>
+    
+    <div class="center-contents">
+        <h2>Our Completed Site Pictures</h2>
+    </div>
+    
+
+    <div class="image-gallery">
+        <img src="images/luxury_villa1.jpeg" alt="House 1">
+        <img src="images/luxury_villa3.jpeg" alt="House 2">
+        <img src="images/Design_One.jpeg" alt="House 3">
+        <img src="images/interior1.jpeg" alt="House 4">
+        <img src="images/Design_Three.jpeg" alt="House 5">
+        <img src="images/interior2.jpeg" alt="House 6">
+        <img src="images/interior3.jpeg" alt="House 7">
+        <img src="images/new_home1.jpeg" alt="House 4">
+    </div>
+    
+
+    <section class="why-sa">
+        <h2>Why SA?</h2>
+        <div class="stats-container">
+            <div class="stat-box">
+                <h3><span class="counter" data-target="04">0</span>+</h3>
+                <p>Years of Experience</p>
+            </div>
+            <div class="stat-box">
+                <h3><span class="counter" data-target="15">0</span>+</h3>
+                <p>Completed Projects</p>
+            </div>
+            <div class="stat-box">
+                <h3><span class="counter" data-target="10">0</span>+</h3>
+                <p>Ongoing Projects</p>
+            </div>
+            <div class="stat-box">
+                <h3><span class="counter" data-target="40">0</span>+</h3>
+                <p>Construction Workers</p>
+            </div>
+            <div class="stat-box">
+                <h3><span class="counter" data-target="5">0</span></h3>
+                <p>Offices in 5 Cities</p>
+            </div>
+            <div class="stat-box">
+                <h3><span class="counter" data-target="10">0</span></h3>
+                <p>Years Warranty</p>
+            </div>
+            <div class="stat-box">
+                <h3><span class="counter" data-target="25">0</span>+</h3>
+                <p>Permanent Staff Members</p>
+            </div>
+            <div class="stat-box">
+                <h3><span class="counter" data-target="425">0</span></h3>
+                <p>Quality Checks</p>
+            </div>
+        </div>
+    
+        <div class="features">
+            <button class="feature-btn">Bank Loan & Building Approval Support</button>
+            <button class="feature-btn">Dedicated Full Time Site Engineer</button>
+            <button class="feature-btn">APP for Realtime Project Tracking</button>
+            <button class="feature-btn">On-Time Handover</button>
+            <button class="feature-btn">One Stop Solution <br> Design + Construction + Interior</button>
+        </div>
+    </section>
+
+
+    <section class="services-section">
+        <div class="left-content">
+            <h4>W H A T W E D O?</h4>
+            <h2>SERVICES <span>WE OFFER</span></h2>
+        </div>
+        <div class="right-content">
+            <div class="service active"> <!-- Add 'active' class for default selection -->
+                <div class="service-box">
+                    <img src="images/architecture_desing.jpg" alt="Architectural Designs">
+                    <p>Architectural Designs</p>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service-box">
+                    <img src="images/residential_constructions.jpg" alt="Residential Construction">
+                    <p>Residential Construction</p>
+                </div>
+            </div>
+            <div class="service">
+                <div class="service-box">
+                    <img src="images/interior_design.png" alt="Interior Designs">
+                    <p>Interior Designs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Consultation Button -->
+    <div class="consultation-section">
+        <button id="consultationButton">GET FREE CONSULTATION</button>
+    </div>
+
+    <!-- The Modal -->
+<div id="quoteModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-body">
+            <!-- Left Section -->
+            <div class="modal-left">
+            <div class="modal-header">GET A FREE QUOTE !!</div>
+
+
+                <div class="input-container">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input type="text" id="name" class="input-field" placeholder="Enter your Name">
+                </div>
+
+                <div class="input-container">
+                    <label for="mobile">Mobile Number <span class="required">*</span></label>
+                    <input type="text" id="mobile" class="input-field" placeholder="Enter Mobile Number">
+                </div>
+
+                <div class="input-container">
+                    <label for="email">Email ID <span class="required">*</span></label>
+                    <input type="email" id="email" class="input-field" placeholder="Enter Email ID">
+                </div>
+
+                <div class="input-container">
+                    <label for="location">Location <span class="required">*</span></label>
+                    <select id="location" class="input-field">
+                        <option>Pattukkottai</option>
+                        <option>Adirampattinam</option>
+                        <option>Madukkur</option>
+                        <option>Manargudi</option>
+                    </select>
+                </div>
+
+                <button class="submit-btn">GET FREE QUOTE</button>
+            </div>
+
+            <!-- Right Section -->
+            <div class="modal-right">
+                <h2>--SA--</h2>
+                <p>HOME CONSTRUCTION <br><strong>EXPERTS IN <span>INDIA</span></strong></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="warranties">
+    <div class="first-gallries">
+                <img src="images/wanted.png" alt="Construction Project 1">
+                <img src="images/wanted2.png" alt="Construction Project 1">
+                <img src="images/wanted3.png" alt="Construction Project 1">
+            </div>
+        </div>
+
+<!--------------------------------------------------------------------------------------------------------------->
+
+<div class="threeD_designs">
+    <h2>Our 3D DESIGNS</h2>
+</div>
+
+<div class="photos_gallery">
+    <img src="images/luxury_villa2.jpeg" alt="Luxury Villa 1" onclick="openLightbox(this)">
+    <img src="images/designs_3d.jpg" alt="Luxury Villa 2" onclick="openLightbox(this)">
+    <img src="images/designs7_3d.jpg" alt="Modern House Design 1" onclick="openLightbox(this)">
+    <img src="images/designs2_3d.jpg" alt="Modern House Design 1" onclick="openLightbox(this)">
+    <img src="images/designs5_3d.jpg" alt="Modern House Design 1" onclick="openLightbox(this)">
+    <img src="images/design.jpeg" alt="Modern House Design 1" onclick="openLightbox(this)">
+</div>
+
+<!-- Lightbox Popup -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" class="lightbox-content">
+</div>
+
+
+<!-- WhatsApp Button (Vertically Centered Right Side) -->
+<a href="https://wa.me/918754709319" class="whatsapp-float" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Phone Button (Below WhatsApp) -->
+<a href="tel:+918754709319" class="phone-float">
+    <i class="fa-solid fa-phone"></i>
+</a>
+
+
+
+<div class="enquire-now-section" style="background: linear-gradient(to right, #FFD700, #FFC107); padding: 20px; text-align: center; border-radius: 10px;">
+    <h2>Enquire Now</h2>
+    <form class="enquire-form" action="/send" method="post">
+        <div class="input-container">
+            <label for="name">Name <span class="required">*</span></label>
+            <input type="text" id="name" name="name" class="input-field" placeholder="Enter your Name" required>
+        </div>
+        
+        <div class="input-container">
+            <label for="mobile">Mobile Number <span class="required">*</span></label>
+            <input type="text" id="mobile" name="mobile" class="input-field" placeholder="Enter Mobile Number" required>
+        </div>
+        
+        <div class="input-container">
+            <label for="email">Email <span class="required">*</span></label>
+            <input type="email" id="email" name="email" class="input-field" placeholder="Enter Email" required>
+        </div>
+        
+        <div class="input-container">
+            <label for="site-location">Site Location <span class="required">*</span></label>
+            <input type="text" id="site-location" name="siteLocation" class="input-field" placeholder="Enter Site Location" required>
+        </div>
+        
+        <div class="input-container">
+            <label for="city">City <span class="required">*</span></label>
+            <input type="text" id="city" name="city" class="input-field" placeholder="Enter City" required>
+        </div>
+        
+        <div class="input-container">
+            <label for="message">Message <span class="required">*</span></label>
+            <textarea id="message" name="message" class="input-field" placeholder="Enter your Message" required></textarea>
+        </div>
+        
+        <button class="send-message-btn" type="submit">Send Message</button>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Other Sections -->
+    <section id="about" class="container py-5">
+        <h2 class="text-center">About Us</h2>
+        <p class="text-center">We are a leading construction company specializing in luxury home interiors and modern architecture.</p>
+    </section>
+
+    <section id="services" class="container py-5">
+        <h2 class="text-center">Our Services</h2>
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <h3>Home Construction</h3>
+                <p>We build high-quality homes with modern designs.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>Luxury Interiors</h3>
+                <p>Premium interior designs for your dream home.</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h3>Commercial Projects</h3>
+                <p>We also take up large-scale building projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container py-5 text-center">
+        <h2>Contact Us</h2>
+        <p>Email: info@yourcompany.com | Phone: +91-XXXXXXXXXX</p>
+        <a href="#" class="btn btn-success">Book a Consultation</a>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2025 Your Company. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
