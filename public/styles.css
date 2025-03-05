@@ -7,7 +7,18 @@ body {
 nav {
     height: 60px; /* Adjust as needed */
     padding: 10px 20px; /* Reduce padding */
-    }        
+    }
+
+
+html, body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      
+
+      
+    
 
 
 
