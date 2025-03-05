@@ -49,12 +49,14 @@ nav {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 1;
-
 }
+
 .hero-content {
     position: relative;
     z-index: 2;
 }
+
+/* Desktop Styles */
 .hero-text {
     position: absolute;
     top: 45%;
@@ -66,10 +68,11 @@ nav {
     padding-top: 7%;
     font-weight: 700;
     color: #ffffff;
-    text-shadow: 3px 3px 20px rgba(255, 255, 255, 0.9),
-                            1px 1px 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 3px 3px 30px rgba(255, 255, 255, 0.9),
+                 1px 1px 10px rgba(255, 255, 255, 0.8);
     letter-spacing: 1px;
-        }
+    margin-bottom: 30px;
+}
 
 .hero-tagline {
     position: absolute;
@@ -80,20 +83,21 @@ nav {
     font-size: 26px;
     font-weight: 700;
     font-family: "Montserrat", sans-serif !important;
-    text-shadow: 2px 2px 12px rgba(255, 255, 255, 0.8), 
+    text-shadow: 2px 2px 12px rgba(255, 255, 255, 0.8),
                  2px 2px 8px rgba(0, 0, 0, 0.8);
     letter-spacing: 0.5px;
     color: #FFFFFF;
-    line-height: 1.2; /* Reduces the space between lines */
-    margin: 0;        /* Removes any default margins */
-    padding: 0;       /* Removes any padding that might cause extra space */
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
 }
 
 .since-2021 {
-    display: block; /* Makes the span behave like a block-level element */
-    margin-top: 10px; /* Adds space between the lines */
-    font-size: 20px; /* Optional: Adjust font size for "since 2021" */
-    font-weight: bold; /* Optional: Make it bold for emphasis */
+    display: block;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .slideshow-indicators {
@@ -104,6 +108,31 @@ nav {
     display: flex;
     gap: 10px;
 }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .hero-text {
+        font-size: 24px;   /* Slightly smaller font */
+        top: 40%;          /* Adjust vertical positioning */
+        padding-top: 0;    /* Remove extra padding */
+    }
+    .hero-tagline {
+        font-size: 20px;   /* Smaller tagline */
+        top: 55%;          /* Adjust to prevent overlap */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text {
+        font-size: 20px;   /* Even smaller for very small screens */
+        top: 38%;
+    }
+    .hero-tagline {
+        font-size: 18px;
+        top: 52%;
+    }
+}
+
 
 .dot {
     width: 12px;
@@ -482,6 +511,7 @@ nav {
     }
     
 
+
 .services-section {
     display: flex;
     align-items: center;
@@ -570,6 +600,74 @@ nav {
     padding: 10px; /* Adjust if needed */
     transition: border 0.3s ease-in-out;
     }
+
+
+
+/* -------------------------
+   Mobile Styles (max-width: 768px)
+-------------------------- */
+@media (max-width: 768px) {
+    .services-section {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .left-content {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .right-content {
+        width: 100%;
+        justify-content: space-around;
+    }
+    .service {
+        width: auto;
+        margin: 10px;
+    }
+    .service img {
+        width: 40px;
+        height: 40px;
+    }
+    .service p {
+        font-size: 14px;
+    }
+}
+
+/* -------------------------
+   Extra Small Devices (max-width: 480px)
+-------------------------- */
+@media (max-width: 480px) {
+    .services-section {
+        padding: 15px;
+    }
+    .service img {
+        width: 35px;
+        height: 35px;
+    }
+    .service p {
+        font-size: 13px;
+    }
+}
+
+/* -------------------------
+   Large Desktop Adjustments (min-width: 1024px)
+-------------------------- */
+@media (min-width: 1024px) {
+    .services-section {
+        padding: 60px 80px;  /* Increase side padding for larger screens */
+    }
+    /* Optionally, adjust icon size slightly for very large screens */
+    .service img {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+    
+
+
+
+
+
     
 
 
@@ -909,8 +1007,7 @@ nav {
     text-align: center;
     border-radius: 10px;
     width: 50%;
-    margin: 40px;
-    margin-bottom: 40px;
+    margin: 40px auto; /* This ensures horizontal centering */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
