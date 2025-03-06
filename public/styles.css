@@ -9,17 +9,17 @@ nav {
     padding: 10px 20px; /* Reduce padding */
     }
 
-
-html, body {
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-      }
-      
-
-      
+.navbar {
+        border-bottom: 2px solid #002D62; /* Adjust color to match DeeJos */
+    }
     
 
+
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    }
 
 
 
@@ -1080,79 +1080,175 @@ textarea.input-field {
 
 
 /* Team Section Styles */
-.team-section {
-    padding: 50px;
-    text-align: center;
-    background-color: #f8f8f8;
-  }
-  
-  .team-section h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-    color: #333;
-  }
-  
-  .team-members {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-  }
-  
-  .team-member {
-    background: #fff;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    padding-top: 100px;
+    background-color: #222;
+    color: #f4f4f4;
     padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 36px;
+    color: #222;
+    font-weight: 700;
+}
+
+.dots {
+    text-align: center;
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: #002D62; /* Adjust the color if needed */
+}
+
+
+
+
+
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Space between team members */
+}
+
+.team-member {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Adjust space between image and text */
+    width: 100%;
+    max-width: 1000px;
+}
+
+.team-member.left {
+    flex-direction: row; /* Image on left, text on right */
+}
+
+.team-member.right {
+    flex-direction: row; /* Image on right, text on left */
+}
+
+.team-member img {
+    width: 250px;
+    max-width: 100%;
+    height: auto;
     border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+}
+
+/* Member Info */
+.member-info {
+    flex: 1; /* Takes up remaining space */
+    text-align: left;
+}
+
+.member-info h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #222;
+}
+
+.position {
+    font-size: 18px;
+    color: #777;
+    margin: 5px 0;
+}
+
+.description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Make it mobile-friendly */
+@media (max-width: 768px) {
+    .team-member {
+        flex-direction: column !important; /* Stack image & text vertically */
+        text-align: center;
+    }
+
+    .team-member img {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .member-info {
+        width: 90%;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+/*Animation Effects Home page*/
+.hero-section {
+    background: url('images/newhome.jpeg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
   }
   
-  .team-member:hover {
-    transform: translateY(-5px);
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+
+
+
+
+
+/*Animation Effects*/
+  .team-member {
+    position: relative;
+    overflow: hidden;
   }
   
   .team-member img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 20px;
+    transition: transform 0.3s ease;
   }
   
-  .team-member h3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #333;
+  .team-member:hover img {
+    transform: scale(1.1);
   }
   
-  .team-member p {
-    font-size: 18px;
-    color: #777;
+  .team-member .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .team-member {
-      width: 80%;
-    }
+  .team-member:hover .overlay {
+    opacity: 1;
   }
   
-  @media (max-width: 480px) {
-    .team-section h2 {
-      font-size: 28px;
-    }
-    .team-member {
-      width: 100%;
-      padding: 15px;
-    }
-    .team-member h3 {
-      font-size: 20px;
-    }
-    .team-member p {
-      font-size: 16px;
-    }
-  }
+
+
+
   
 
 
@@ -1191,4 +1287,5 @@ footer {
      background: #333;
      color: white;
      padding: 20px 0;
+     text-align: center;
 }
