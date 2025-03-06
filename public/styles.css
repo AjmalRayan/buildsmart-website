@@ -1010,8 +1010,6 @@ html, body {
 }
 
 
-
-
 .enquire-now-section {
     background: linear-gradient(to right, #FFD700, #FFC107);
     padding: 30px;
@@ -1079,7 +1077,8 @@ textarea.input-field {
 
 
 
-/* Team Section Styles */
+
+/*---------------------------------------------- Team Section Styles -------------------------------------------*/
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -1188,9 +1187,6 @@ header h1 {
 
 
 
-
-
-
 /*Animation Effects Home page*/
 .hero-section {
     background: url('images/newhome.jpeg') center/cover no-repeat;
@@ -1249,43 +1245,102 @@ header h1 {
 
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-    
-    
-
 section {
     padding: 60px 0;
     }
+/* Footer Styling */
 footer {
-     background: #333;
-     color: white;
-     padding: 20px 0;
-     text-align: center;
+    background-color: #111;
+    color: white;
+    padding: 50px 0;
+}
+
+footer h5 {
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+/* Quick Links & About Company */
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 8px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+footer ul li a:hover {
+    color: yellow !important;
+}
+
+
+
+
+/* Contact Info Icons */
+footer .contact-info p i {
+    color: yellow; /* Yellow icons */
+    margin-right: 8px;
+}
+
+/* Social Media Icons */
+footer .social-icons a {
+    color: yellow;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: white;
+}
+
+/* Divider Lines */
+footer .col-md-3 {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    padding-right: 20px;
+}
+
+footer .col-md-3:last-child {
+    border-right: none;
+}
+
+.col-md-3 ul li::before {
+    content: "\f054";  /* FontAwesome right-angle icon */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    color: rgb(235, 235, 121); /* Yellow color */
+    margin-right: 10px; /* Space between icon and text */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Change color on hover */
+.col-md-3 ul li:hover::before {
+    color: white; /* Change to white on hover */
+}
+
+/* Footer Bottom */
+footer .copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+
+/* Footer Bottom */
+footer .copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
