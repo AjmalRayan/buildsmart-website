@@ -1079,7 +1079,7 @@ textarea.input-field {
 
 
 /*---------------------------------------------- Team Section Styles -------------------------------------------*/
-body {
+.team-page {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -1328,13 +1328,7 @@ footer .col-md-3:last-child {
 }
 
 
-
-
-
-
-
-
-body {
+.about-page{
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -1413,11 +1407,210 @@ footer {
 }
 
 .about-left {
-    left: -400px; /* Adjust positioning */
+    left: -450px; /* Adjust positioning */
 }
 .about-right {
     left: 600px; /* Adjust positioning */
 }
+
+
+
+
+.cpackage {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-top: 100px;
+}
+
+/* Right-side text alignment fix */
+.col-lg-4 {
+    padding-left: 20px; /* Adjust spacing for better alignment */
+    max-width: 400px; /* Control text wrapping */
+    margin-left: auto; /* Align within the flex container */
+    text-align: right; /* Ensure all text is right-aligned */
+    direction: ltr; /* Keep text direction normal */
+}
+
+.col-lg-4 p {
+    text-align: left; /* Align paragraph text properly */
+    display: block;
+    margin: 5px 0; /* Add spacing between lines */
+    
+}
+
+/* Package Card */
+.package {
+    background-color: white;
+    width: 300px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.package-title {
+    background-color: #f2c94c;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+
+
+
+
+
+
+
+/* General Styles */
+.cpackage {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+.headline {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Packages Layout */
+.packages {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.package {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+}
+
+.package-title {
+    background: #f2c94c;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 10px 0;
+}
+
+/* Accordion Styling */
+.accordion {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 10px 15px; /* Add padding for better spacing */
+    background-color: #fff;
+    font-size: 12px; /* Smaller text */
+    font-weight: 400; /* Normal weight */
+    color: #333; /* Darker text for readability */
+    line-height: 1.6; /* More spacing between lines */
+    text-align: left; /* Align text to the left */
+}
+
+/* Adding Bullet Points */
+.accordion-content p {
+    margin: 5px 0;
+    padding-left: 15px;
+    position: relative;
+}
+
+.accordion-content p::before {
+    content: "•";  /* Bullet point */
+    position: absolute;
+    left: 0;
+    color: #000; /* Bullet color */
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.icon {
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+/* Expanded State */
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+.accordion-item.active .icon {
+    transform: rotate(45deg);
+}
+
+/* Button */
+.details-btn {
+    background-color: #f2c94c;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.details-btn:hover {
+    background-color: #e5b93b;
+}
+
+
+
+
+
 
 
 
