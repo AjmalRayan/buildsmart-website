@@ -327,7 +327,7 @@ html, body {
 
 
         /* Button styling with hover effect */
-.package {
+.package-color {
     background-color: #f4c542;
     padding: 15px 25px;
     border-radius: 10px;
@@ -1441,6 +1441,10 @@ footer {
     
 }
 
+
+
+
+
 /* Package Card */
 .package {
     background-color: white;
@@ -1476,6 +1480,7 @@ footer {
     font-family: 'Poppins', sans-serif;
     background-color: #f8f8f8;
     text-align: center;
+    margin-top: 100px;
 }
 
 .headline {
@@ -1488,32 +1493,63 @@ footer {
 .packages {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 10px;
     flex-wrap: wrap;
     padding: 20px;
 }
+
 
 .package {
     background: white;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 250px;
+    width: 300px;
     text-align: center;
+    position: relative;
+    overflow: hidden; /* Prevents unwanted lines */
 }
 
 .package-title {
-    background: #f2c94c;
-    padding: 10px;
+    font-size: 15px;
     font-weight: bold;
-    border-radius: 5px;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 10px;
 }
 
+/* Fix for "crack" - Remove misalignment */
+.package-title::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Pricing Styles */
 .price {
-    font-size: 20px;
+    font-size: 18px;
+    font-weight: normal;
+    color: #000;
+}
+
+.bold-price {
+    font-size: 24px;
     font-weight: bold;
-    color: #333;
-    margin: 10px 0;
+    color: #000;
+}
+
+.small-text {
+    font-size: 14px;
+    font-weight: normal;
+    color: #555;
+    text-transform: lowercase;
 }
 
 /* Accordion Styling */
@@ -1523,31 +1559,40 @@ footer {
 }
 
 .accordion-item {
-    border-bottom: 1px solid #ccc;
+    border-bottom: none; /* Remove borders */
     padding: 10px;
+    margin-bottom: 5px; /* Ensure spacing */
 }
 
+/* Fix for "crack" - Remove top & bottom margin */
 .accordion-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     font-weight: bold;
+    text-align: left;
     padding: 10px;
     background-color: #f5f5f5;
+    margin: 0; /* Prevents misalignment */
+    font-size: 14px; /* Adjust the size as needed */
+    font-weight: 600; /* Make it slightly thinner if needed */
 }
 
+/* Fix for "crack" - Prevent unexpected spacing */
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
-    padding: 10px 15px; /* Add padding for better spacing */
+    transition: max-height 0.4s ease-out;
+    padding: 0px 15px; /* Reduce spacing */
     background-color: #fff;
-    font-size: 12px; /* Smaller text */
-    font-weight: 400; /* Normal weight */
-    color: #333; /* Darker text for readability */
-    line-height: 1.6; /* More spacing between lines */
-    text-align: left; /* Align text to the left */
+    font-size: 10px;
+    font-weight: 400;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;
+    border-top: none; /* Ensure no extra borders */
+    
 }
 
 /* Adding Bullet Points */
@@ -1558,24 +1603,12 @@ footer {
 }
 
 .accordion-content p::before {
-    content: "•";  /* Bullet point */
+    content: "•";
     position: absolute;
     left: 0;
-    color: #000; /* Bullet color */
+    color: #000;
     font-weight: bold;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .icon {
     font-weight: bold;
@@ -1588,7 +1621,7 @@ footer {
 }
 
 .accordion-item.active .icon {
-    transform: rotate(45deg);
+    transform: rotate(180deg);
 }
 
 /* Button */
@@ -1597,6 +1630,7 @@ footer {
     border: none;
     padding: 10px;
     width: 100%;
+    font-size: 15px;
     font-weight: bold;
     cursor: pointer;
     margin-top: 10px;
@@ -1606,6 +1640,7 @@ footer {
 .details-btn:hover {
     background-color: #e5b93b;
 }
+
 
 
 

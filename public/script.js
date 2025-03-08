@@ -1,35 +1,36 @@
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Script Loaded!");
 
-    // **Accordion Functionality**
+    // **Accordion Functionality (Synchronized Expansion)**
     document.querySelectorAll(".accordion-header").forEach(header => {
         header.addEventListener("click", function () {
             console.log("Accordion clicked:", this);
 
-            let content = this.nextElementSibling;
+            let title = this.dataset.title; // Get the title of the clicked section
             let icon = this.querySelector(".icon");
 
-            if (!content) {
-                console.log("Error: No content found!");
+            if (!title) {
+                console.log("Error: No title found!");
                 return;
             }
 
-            // Close all other open accordions
-            document.querySelectorAll(".accordion-content").forEach(item => {
-                if (item !== content) {
-                    item.style.maxHeight = null;
-                    item.previousElementSibling.querySelector(".icon").textContent = "+";
+            // Find all sections with the same title in all packages
+            let allMatchingHeaders = document.querySelectorAll(`.accordion-header[data-title="${title}"]`);
+
+            let shouldExpand = !this.nextElementSibling.style.maxHeight; // Determine if expanding
+
+            allMatchingHeaders.forEach(header => {
+                let content = header.nextElementSibling;
+                let icon = header.querySelector(".icon");
+
+                if (shouldExpand) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                    icon.textContent = "-";
+                } else {
+                    content.style.maxHeight = null;
+                    icon.textContent = "+";
                 }
             });
-
-            // Toggle accordion
-            if (content.style.maxHeight) {
-                content.style.maxHeight = null;
-                icon.textContent = "+";
-            } else {
-                content.style.maxHeight = content.scrollHeight + "px";
-                icon.textContent = "-";
-            }
         });
     });
 
