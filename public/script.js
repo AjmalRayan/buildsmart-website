@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Accordion clicked:", this);
 
             let title = this.dataset.title; // Get the title of the clicked section
+            let icon = this.querySelector(".icon");
 
             if (!title) {
                 console.log("Error: No title found!");
@@ -55,8 +56,6 @@ document.addEventListener("DOMContentLoaded", function () {
             toggleAccordion(title); // Call the function to toggle the accordion
         });
     });
-
-
 
     // **Modal Functionality (Handles Both Buttons)**
     const modal = document.getElementById("quoteModal");
@@ -94,9 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
-
-
+    // **AJAX Form Submission (Modal Form)**
     if (quoteForm) {
         quoteForm.addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent default form submission
@@ -135,33 +132,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    // Close modal when clicking outside the modal
+    // **Close Modal When Clicking Outside**
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
             console.log("Clicked outside modal: Hiding Modal");
             modal.style.display = "none";
         }
     });
-
 
     // **Hero Section Slideshow**
     let images = document.querySelectorAll(".slideshow img");
@@ -273,7 +250,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", revealSection);
     revealSection();
 
-
     // **Lightbox Functionality**
     function openLightbox(img) {
         console.log("Opening Lightbox...", img.src);
@@ -301,4 +277,3 @@ document.addEventListener("DOMContentLoaded", function () {
     window.openLightbox = openLightbox;
     window.closeLightbox = closeLightbox;
 });
-

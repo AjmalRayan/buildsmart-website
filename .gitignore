@@ -3,4 +3,5 @@ AppData/
 .vscode/ 
 *.log 
 *.tmp 
-*.db 
+*.db
+*.env

@@ -16,6 +16,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Create a POST route to handle form submissions
 app.post('/send-email', async (req, res) => {
+    console.log("Received data:", req.body); // Log the received form data to the console
     const { name, mobile, email, siteLocation, city, message, location } = req.body;
 
     // Determine email subject and content
@@ -50,8 +51,8 @@ app.post('/send-email', async (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.EMAIL_USER, // Your email from .env file
-            pass: process.env.EMAIL_PASS  // App password from .env file
+            user: 'process.env.EMAIL_USER', // Your email from .env file
+            pass: 'process.env.EMAIL_PASS'  // App password from .env file
         }
     });
 
@@ -68,12 +69,12 @@ app.post('/send-email', async (req, res) => {
         res.status(200).json({ message: "Email sent successfully!" });
     } catch (error) {
         console.error("Error sending email:", error);
-        res.status(500).json({ message: "Failed to send email." });
+        res.status(500).json({ message: "Failed to send email.", error: error.toString() });
     }
 });
 
 // Start the server
-const PORT = process.env.PORT || 5004;
+const PORT = process.env.PORT || 6003;
 app.listen(PORT, () => {
-    console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
