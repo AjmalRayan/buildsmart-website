@@ -2,6 +2,7 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const path = require('path');
+require('dotenv').config(); // Load environment variables
 
 // Create an instance of Express
 const app = express();
@@ -10,48 +11,69 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Serve static files like your HTML (adjust path if needed)
+// Serve static files (adjust path if needed)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Create a POST route to handle form submission
-app.post('/send', (req, res) => {
-    const { name, mobile, email, siteLocation, city, message } = req.body;
+// Create a POST route to handle form submissions
+app.post('/send-email', async (req, res) => {
+    const { name, mobile, email, siteLocation, city, message, location } = req.body;
 
-    // Set up Nodemailer transporter
+    // Determine email subject and content
+    let subject;
+    let content;
+
+    if (siteLocation && city) {
+        // Home Page Enquiry Form
+        subject = "New Enquiry from Website";
+        content = `
+            <h2>New Enquiry Received</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Mobile Number:</strong> ${mobile}</p>
+            <p><strong>Email ID:</strong> ${email}</p>
+            <p><strong>Site Location:</strong> ${siteLocation}</p>
+            <p><strong>City:</strong> ${city}</p>
+            <p><strong>Message:</strong> ${message}</p>
+        `;
+    } else {
+        // Construction Packages Form
+        subject = "New Enquiry - Construction Packages";
+        content = `
+            <h2>New Enquiry Received</h2>
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Mobile Number:</strong> ${mobile}</p>
+            <p><strong>Email ID:</strong> ${email}</p>
+            <p><strong>Location:</strong> ${location}</p>
+        `;
+    }
+
+    // Set up Nodemailer transporter (Using Environment Variables)
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'ajmalak016@gmail.com',  // Replace with your Gmail email address
-            pass: 'sufg kzcp oswy nubi'      // Replace with your App Password
+            user: process.env.EMAIL_USER, // Your email from .env file
+            pass: process.env.EMAIL_PASS  // App password from .env file
         }
     });
 
-    // Define the email content
+    // Define the email options
     const mailOptions = {
-        from: 'ajmalak016@gmail.com',  // Your Gmail address
-        to: 'anajmalkhan2020@gmail.com',  // The recipient email address
-        subject: 'New Enquiry from Website',  // The subject of the email
-        text: `You have received a new enquiry!\n\n
-               Name: ${name}\n
-               Mobile: ${mobile}\n
-               Email: ${email}\n
-               Site Location: ${siteLocation}\n
-               City: ${city}\n
-               Message: ${message}`
+        from: 'ajmalak016@gmail.com',  
+        to: "anajmalkhan2020@gmail.com",  // Your recipient email
+        subject: subject,
+        html: content
     };
 
-    // Send email using Nodemailer
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log('Error:', error);
-            return res.status(500).send('Error sending email');
-        }
-        console.log('Email sent: ' + info.response);
-        return res.status(200).send('Email sent successfully!');
-    });
+    try {
+        await transporter.sendMail(mailOptions);
+        res.status(200).json({ message: "Email sent successfully!" });
+    } catch (error) {
+        console.error("Error sending email:", error);
+        res.status(500).json({ message: "Failed to send email." });
+    }
 });
 
 // Start the server
-app.listen(5000, () => {
-    console.log('Server running on http://localhost:5000');
+const PORT = process.env.PORT || 5003;
+app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
 });
