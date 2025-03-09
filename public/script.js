@@ -34,6 +34,50 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // **Modal Functionality (Handles Both Buttons)**
+    const modal = document.getElementById("quoteModal");
+    const consultationBtn = document.getElementById("consultationButton"); // "GET FREE CONSULTATION" button
+    const specButtons = document.querySelectorAll(".get-detailed-spec-btn"); // "GET DETAILED SPECIFICATION" buttons
+    const closeBtn = document.querySelector(".close-btn");
+
+    if (!modal) {
+        console.error("Modal element NOT FOUND!");
+        return;
+    }
+
+    // Open modal when clicking "GET FREE CONSULTATION"
+    if (consultationBtn) {
+        consultationBtn.addEventListener("click", function () {
+            console.log("Consultation Button Clicked: Opening Modal");
+            modal.style.display = "flex";
+        });
+    }
+
+    // Open modal when clicking "GET DETAILED SPECIFICATION"
+    specButtons.forEach(button => {
+        button.addEventListener("click", function () {
+            console.log("Specification Button Clicked: Opening Modal");
+            modal.style.display = "flex";
+        });
+    });
+
+    // Close modal when clicking the close button
+    if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+            console.log("Close Button Clicked: Hiding Modal");
+            modal.style.display = "none";
+        });
+    }
+
+    // Close modal when clicking outside the modal
+    window.addEventListener("click", function (event) {
+        if (event.target === modal) {
+            console.log("Clicked outside modal: Hiding Modal");
+            modal.style.display = "none";
+        }
+    });
+
+
     // **Hero Section Slideshow**
     let images = document.querySelectorAll(".slideshow img");
     let dots = document.querySelectorAll(".dot");
@@ -144,30 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", revealSection);
     revealSection();
 
-    // **Modal Functionality**
-    const modal = document.getElementById("quoteModal");
-    const btn = document.getElementById("consultationButton");
-    const closeBtn = document.querySelector(".close-btn");
-
-    if (modal && closeBtn) {
-        console.log("Modal and close button found!");
-
-        btn.addEventListener("click", function () {
-            modal.style.display = "flex";
-        });
-
-        closeBtn.addEventListener("click", function () {
-            modal.style.display = "none";
-        });
-
-        window.addEventListener("click", function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        });
-    } else {
-        console.log("Modal or close button not found!");
-    }
 
     // **Lightbox Functionality**
     function openLightbox(img) {

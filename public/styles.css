@@ -1456,7 +1456,7 @@ footer {
 }
 
 .package-title {
-    background-color: #f2c94c;
+    background-color: #FFD700;
     padding: 10px;
     font-weight: bold;
     border-radius: 5px;
@@ -1560,7 +1560,7 @@ footer {
 
 .accordion-item {
     border-bottom: none; /* Remove borders */
-    padding: 10px;
+    padding: 8px 12px
     margin-bottom: 5px; /* Ensure spacing */
 }
 
@@ -1642,6 +1642,37 @@ footer {
 }
 
 
+
+/* Styling for the GET DETAILED SPECIFICATION button */
+.get-detailed-spec-btn {
+    background: #FFD700;
+    color: black;  /* Text color */
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.get-detailed-spec-btn:hover {
+    background: #FFC107; /* Solid yellow on hover */
+    color: white;
+}
+
+
+
+@media (min-width: 768px) { 
+    hr {
+        display: none;
+    }
+}
 
 
 
