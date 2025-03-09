@@ -1560,8 +1560,8 @@ footer {
 
 .accordion-item {
     border-bottom: none; /* Remove borders */
-    padding: 8px 12px
-    margin-bottom: 5px; /* Ensure spacing */
+    padding: 8px 12px;
+    margin-bottom:  5px; /* Ensure spacing */
 }
 
 /* Fix for "crack" - Remove top & bottom margin */
