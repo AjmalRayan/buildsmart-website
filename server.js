@@ -38,7 +38,7 @@ app.post('/send-email', async (req, res) => {
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Mobile Number:</strong> ${mobile}</p>
             <p><strong>Email ID:</strong> ${email}</p>
-            <p><strong>Construction Package Location:</strong> ${location}</p>`;
+            <p><strong>Location:</strong> ${location}</p>`;
     } else {
         return res.status(400).json({ message: "Invalid form submission. Missing required fields." });
     }
@@ -70,7 +70,7 @@ app.post('/send-email', async (req, res) => {
 });
 
 // ✅ Start the server
-const PORT = process.env.PORT || 6006;
+const PORT = process.env.PORT || 6009;
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
 }).on('error', (err) => {

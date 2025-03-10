@@ -48,6 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const specButtons = document.querySelectorAll(".get-detailed-spec-btn");
     const closeBtn = document.querySelector(".close-btn");
     const quoteForm = document.getElementById("quoteForm");
+    const constructionForm = document.getElementById("constructionForm");
 
     if (consultationBtn) {
         consultationBtn.addEventListener("click", function () {
@@ -84,15 +85,37 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    if (constructionForm) {
+        constructionForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const formData = {
+                name: document.getElementById("name").value.trim(),
+                mobile: document.getElementById("mobile").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                location: document.getElementById("location").value.trim()
+            };
+
+            sendFormData(formData);
+        });
+    }
+
     function sendFormData(formData) {
-        fetch("http://localhost:6004/send-email", {
+        fetch("http://localhost:6009/send-email", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData)
         })
         .then(response => response.json())
-        .then(data => console.log("Success:", data))
-        .catch(error => console.error("Error:", error));
+        .then(data => {
+            console.log("Success:", data);
+            alert("Message sent successfully!");
+        })
+        .catch(error => {
+            console.error("Error:", error);
+            alert("Something went wrong. Try again.");
+        });
+
     }
 
     window.addEventListener("click", function (event) {
