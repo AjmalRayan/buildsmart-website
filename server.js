@@ -9,9 +9,9 @@ const app = express();
 
 // ✅ Middleware
 app.use(cors({
-    origin: "*",  // Allow all origins (temporary fix)
-    methods: ["GET", "POST"],  // Allow only necessary methods
-    allowedHeaders: ["Content-Type"]  // Allow required headers
+    origin: "https://sa-constructions.onrender.com",  // Replace with your actual frontend URL
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"]
 }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
