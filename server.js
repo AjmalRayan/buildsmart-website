@@ -8,7 +8,11 @@ const cors = require("cors");
 const app = express();
 
 // ✅ Middleware
-app.use(cors());
+app.use(cors({
+    origin: "*",  // Allow all origins (temporary fix)
+    methods: ["GET", "POST"],  // Allow only necessary methods
+    allowedHeaders: ["Content-Type"]  // Allow required headers
+}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -70,7 +74,7 @@ app.post('/send-email', async (req, res) => {
 });
 
 // ✅ Start the server
-const PORT = process.env.PORT || 6009;
+const PORT = process.env.PORT || 6011;
 app.listen(PORT, () => {
     console.log(`🚀 Server running on http://localhost:${PORT}`);
 }).on('error', (err) => {
