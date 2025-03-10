@@ -6,10 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     function toggleAccordion(title) {
         console.log(`Toggling: ${title}`);
 
-        // Check if the clicked title is already expanded
         let isAlreadyExpanded = title === currentExpandedTitle;
 
-        // Collapse all sections
         document.querySelectorAll(".accordion-content").forEach(content => {
             content.style.maxHeight = null;
         });
@@ -18,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
             icon.textContent = "+";
         });
 
-        // If the clicked section is not the currently expanded one, expand it
         if (!isAlreadyExpanded) {
             let allMatchingHeaders = document.querySelectorAll(`.accordion-header[data-title="${title}"]`);
             allMatchingHeaders.forEach(header => {
@@ -29,118 +26,82 @@ document.addEventListener("DOMContentLoaded", function () {
                 icon.textContent = "-";
             });
 
-            // Update the current expanded title
             currentExpandedTitle = title;
         } else {
-            // If clicked again, reset current expanded title to allow re-expansion later
             currentExpandedTitle = null;
         }
     }
 
-    // Expand default category on page load
     toggleAccordion(currentExpandedTitle);
 
-    // **Accordion Functionality (Synchronized Expansion)**
     document.querySelectorAll(".accordion-header").forEach(header => {
         header.addEventListener("click", function () {
-            console.log("Accordion clicked:", this);
-
-            let title = this.dataset.title; // Get the title of the clicked section
-            let icon = this.querySelector(".icon");
-
-            if (!title) {
-                console.log("Error: No title found!");
-                return;
-            }
-
-            toggleAccordion(title); // Call the function to toggle the accordion
+            let title = this.dataset.title;
+            if (!title) return;
+            toggleAccordion(title);
         });
     });
 
-    // **Modal Functionality (Handles Both Buttons)**
+    // Modal Functionality
     const modal = document.getElementById("quoteModal");
-    const consultationBtn = document.getElementById("consultationButton"); // "GET FREE CONSULTATION" button
-    const specButtons = document.querySelectorAll(".get-detailed-spec-btn"); // "GET DETAILED SPECIFICATION" buttons
+    const consultationBtn = document.getElementById("consultationButton");
+    const specButtons = document.querySelectorAll(".get-detailed-spec-btn");
     const closeBtn = document.querySelector(".close-btn");
     const quoteForm = document.getElementById("quoteForm");
 
-    if (!modal) {
-        console.error("Modal element NOT FOUND!");
-        return;
-    }
-
-    // Open modal when clicking "GET FREE CONSULTATION"
     if (consultationBtn) {
         consultationBtn.addEventListener("click", function () {
-            console.log("Consultation Button Clicked: Opening Modal");
             modal.style.display = "flex";
         });
     }
 
-    // Open modal when clicking "GET DETAILED SPECIFICATION"
     specButtons.forEach(button => {
         button.addEventListener("click", function () {
-            console.log("Specification Button Clicked: Opening Modal");
             modal.style.display = "flex";
         });
     });
 
-    // Close modal when clicking the close button
     if (closeBtn) {
         closeBtn.addEventListener("click", function () {
-            console.log("Close Button Clicked: Hiding Modal");
             modal.style.display = "none";
         });
     }
 
-    // **AJAX Form Submission (Modal Form)**
     if (quoteForm) {
         quoteForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault();
 
-            // Get form values correctly
-            const name = document.getElementById("name").value.trim();
-            const mobile = document.getElementById("mobile").value.trim();
-            const email = document.getElementById("email").value.trim();
-            const location = document.getElementById("location").value.trim();
-
-            // Create form data object
             const formData = {
-                name: name,
-                mobile: mobile,
-                email: email,
-                location: location
+                name: document.getElementById("name").value.trim(),
+                mobile: document.getElementById("mobile").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                siteLocation: document.getElementById("sitelocation").value.trim(),
+                city: document.getElementById("city").value.trim(),
+                message: document.getElementById("message").value.trim()
             };
 
-            // Send data to the server using fetch API
-            fetch("/send-email", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => response.json())
-            .then(data => {
-                alert("Message Sent Successfully!");
-                quoteForm.reset(); // Clear the form after submission
-            })
-            .catch(error => {
-                console.error("Error:", error);
-                alert("Something went wrong. Try again.");
-            });
+            sendFormData(formData);
         });
     }
 
-    // **Close Modal When Clicking Outside**
+    function sendFormData(formData) {
+        fetch("http://localhost:6004/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => console.log("Success:", data))
+        .catch(error => console.error("Error:", error));
+    }
+
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
-            console.log("Clicked outside modal: Hiding Modal");
             modal.style.display = "none";
         }
     });
 
-    // **Hero Section Slideshow**
+    // Hero Section Slideshow
     let images = document.querySelectorAll(".slideshow img");
     let dots = document.querySelectorAll(".dot");
     let heroText = document.querySelector(".hero-text");
@@ -166,8 +127,6 @@ document.addEventListener("DOMContentLoaded", function () {
     let interval;
 
     function changeSlide(index) {
-        if (images.length === 0 || dots.length === 0) return;
-
         images.forEach(img => img.classList.remove("active"));
         dots.forEach(dot => dot.classList.remove("active"));
 
@@ -207,7 +166,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     startAutoSlide();
 
-    // **Counter Animation**
+    // Counter Animation
     const counters = document.querySelectorAll(".counter");
     counters.forEach(counter => {
         counter.innerText = "0";
@@ -226,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function () {
         updateCounter();
     });
 
-    // **Service Box Click Event**
+    // Service Box Click Event
     const serviceBoxes = document.querySelectorAll(".service");
     serviceBoxes.forEach(service => service.classList.remove("active"));
 
@@ -237,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // **Reveal Sections on Scroll**
+    // Reveal Sections on Scroll
     let section = document.querySelector(".services-section");
     function revealSection() {
         let sectionTop = section.getBoundingClientRect().top;
@@ -250,27 +209,21 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", revealSection);
     revealSection();
 
-    // **Lightbox Functionality**
+    // Lightbox Functionality
     function openLightbox(img) {
-        console.log("Opening Lightbox...", img.src);
         var lightbox = document.getElementById("lightbox");
         var lightboxImg = document.getElementById("lightbox-img");
 
         if (lightbox && lightboxImg) {
             lightbox.style.display = "flex";
             lightboxImg.src = img.src;
-        } else {
-            console.error("Lightbox elements not found!");
         }
     }
 
     function closeLightbox() {
-        console.log("Closing Lightbox...");
         var lightbox = document.getElementById("lightbox");
         if (lightbox) {
             lightbox.style.display = "none";
-        } else {
-            console.error("Lightbox not found!");
         }
     }
 
