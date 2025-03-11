@@ -11,6 +11,17 @@ app.use(cors());
 // Middleware to parse JSON request bodies
 app.use(express.json());
 
+
+app.get("/", (req, res) => {
+    res.send("Server is running...");
+});
+
+
+
+
+
+
+
 // POST route to handle form submissions
 app.post("/send-email", async (req, res) => {
     const { formType, name, mobile, email, siteLocation, city, message, location } = req.body;
