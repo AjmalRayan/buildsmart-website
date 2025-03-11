@@ -1,86 +1,69 @@
 const express = require("express");
 const cors = require("cors");
 const nodemailer = require("nodemailer");
-require("dotenv").config(); // Load environment variables
+const path = require("path"); // ✅ Required for serving files
+require("dotenv").config();
 
 const app = express();
 
-// Enable CORS for all requests
 app.use(cors());
-
-// Middleware to parse JSON request bodies
 app.use(express.json());
 
+// ✅ Serve static frontend files (ALL HTML, CSS, JS files inside 'public' folder)
+app.use(express.static(path.join(__dirname, "public")));
 
+// ✅ Handle homepage request
 app.get("/", (req, res) => {
-    res.send("Server is running...");
+    res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+// ✅ Handle other pages dynamically
+app.get("/:page", (req, res) => {
+    const page = req.params.page;
+    const filePath = path.join(__dirname, "public", `${page}.html`);
 
+    // Check if the file exists before serving
+    res.sendFile(filePath, (err) => {
+        if (err) {
+            res.status(404).send("Page not found"); // Handle 404 errors
+        }
+    });
+});
 
-
-
-
-
-// POST route to handle form submissions
+// 📨 Handle form submission via email
 app.post("/send-email", async (req, res) => {
     const { formType, name, mobile, email, siteLocation, city, message, location } = req.body;
 
-    // Validate data (ensure required fields are present)
     if (!name || !mobile || !email) {
         return res.status(400).json({ error: "Missing required fields" });
     }
 
     try {
-        // Create transporter for sending emails
         const transporter = nodemailer.createTransport({
             service: "gmail",
             auth: {
-                user: process.env.EMAIL_USER, // Your email
-                pass: process.env.EMAIL_PASS  // App password (if using Gmail)
+                user: process.env.EMAIL_USER,
+                pass: process.env.EMAIL_PASS
             }
         });
 
-        // Set email subject and content based on form type
-        let subject = "";
-        let emailContent = "";
-
+        let subject, emailContent;
         if (formType === "enquireForm") {
             subject = "New Enquiry Received";
-            emailContent = `
-                You have received a new enquiry:
-                --------------------------------
-                Name: ${name}
-                Mobile: ${mobile}
-                Email: ${email}
-                Site Location: ${siteLocation}
-                City: ${city}
-                Message: ${message}
-            `;
+            emailContent = `Name: ${name}\nMobile: ${mobile}\nEmail: ${email}\nSite Location: ${siteLocation}\nCity: ${city}\nMessage: ${message}`;
         } else if (formType === "constructionForm") {
             subject = "New Construction Package Inquiry";
-            emailContent = `
-                You have received a new construction package inquiry:
-                ------------------------------------------------------
-                Name: ${name}
-                Mobile: ${mobile}
-                Email: ${email}
-                Location: ${location}
-            `;
+            emailContent = `Name: ${name}\nMobile: ${mobile}\nEmail: ${email}\nLocation: ${location}`;
         } else {
             return res.status(400).json({ error: "Invalid form type" });
         }
 
-        // Email options
-        const mailOptions = {
+        await transporter.sendMail({
             from: process.env.EMAIL_USER,
-            to: "anajmalkhan2020@gmail.com", // Replace with your actual email
-            subject: subject,
+            to: "anajmalkhan2020@gmail.com",
+            subject,
             text: emailContent
-        };
-
-        // Send email
-        await transporter.sendMail(mailOptions);
+        });
 
         res.json({ success: true, message: "Email sent successfully!" });
 
@@ -90,6 +73,5 @@ app.post("/send-email", async (req, res) => {
     }
 });
 
-// Start the server
-const PORT = process.env.PORT || 6012;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+const PORT = process.env.PORT || 6013;
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
