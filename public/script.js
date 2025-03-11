@@ -68,43 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    if (enquireForm) {
-        enquireForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            const formData = {
-                name: document.getElementById("enquire-name").value.trim(),
-                mobile: document.getElementById("enquire-mobile").value.trim(),
-                email: document.getElementById("enquire-email").value.trim(),
-                siteLocation: document.getElementById("enquire-site-location").value.trim(),
-                city: document.getElementById("enquire-city").value.trim(),
-                message: document.getElementById("enquire-message").value.trim(),
-            };
-
-            sendFormData(formData);
-        });
-    }
-
-    if (constructionForm) {
-        constructionForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            const formData = {
-                name: document.getElementById("name").value.trim(),
-                mobile: document.getElementById("mobile").value.trim(),
-                email: document.getElementById("email").value.trim(),
-                location: document.getElementById("location").value.trim()
-            };
-
-            sendFormData(formData);
-        });
-    }
-
-    function sendFormData(formData) {
-        fetch("https://sa-construction.onrender.com/send-email", {
+    function sendFormData(formType, formData) {
+        fetch("http://localhost:6011/send-email", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData)
+            body: JSON.stringify({ formType, ...formData })
         })
         .then(response => response.json())
         .then(data => {
@@ -115,8 +83,46 @@ document.addEventListener("DOMContentLoaded", function () {
             console.error("Error:", error);
             alert("Something went wrong. Try again.");
         });
-
     }
+    
+    if (enquireForm) {
+        enquireForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+    
+            const formData = {
+                name: document.getElementById("enquire-name").value.trim(),
+                mobile: document.getElementById("enquire-mobile").value.trim(),
+                email: document.getElementById("enquire-email").value.trim(),
+                siteLocation: document.getElementById("enquire-site-location").value.trim(),
+                city: document.getElementById("enquire-city").value.trim(),
+                message: document.getElementById("enquire-message").value.trim()
+            };
+    
+            sendFormData("enquireForm", formData);
+        });
+    }
+    
+    if (constructionForm) {
+        constructionForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+    
+            const formData = {
+                name: document.getElementById("name").value.trim(),
+                mobile: document.getElementById("mobile").value.trim(),
+                email: document.getElementById("email").value.trim(),
+                location: document.getElementById("location").value.trim()
+            };
+    
+            sendFormData("constructionForm", formData);
+        });
+    }
+    
+    
+
+
+
+
+
 
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
@@ -221,16 +227,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Reveal Sections on Scroll
     function revealSection() {
-    let section = document.querySelector(".services-section");
-        if (section) {  // ✅ Only run this if the section exists
+        const section = document.querySelector(".services-section");
+        if (!section) return; // Exit if section doesn't exist
+    
         let sectionTop = section.getBoundingClientRect().top;
         let triggerPoint = window.innerHeight - 100;
-
-    if (sectionTop < triggerPoint) {
-        section.classList.add("show");
+    
+        if (sectionTop < triggerPoint) {
+            section.classList.add("show");
+        }
     }
-}
-    }
+    
     window.addEventListener("scroll", revealSection);
     revealSection();
 
