@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sendFormData(formType, formData) {
-        fetch("http://localhost:6011/send-email", {
+        fetch("http://localhost:6012/send-email", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ formType, ...formData })
