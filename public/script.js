@@ -69,11 +69,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sendFormData(formType, formData) {
-        fetch("http://localhost:6013/send-email", {
+        formData.formType = formType;
+        fetch("https://sa-constructions.onrender.com/send-email", { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ formType, ...formData })
-        })
+            body: JSON.stringify(formData)
+        })        
         .then(response => response.json())
         .then(data => {
             console.log("Success:", data);

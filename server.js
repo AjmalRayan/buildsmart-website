@@ -8,6 +8,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 // ✅ Serve static frontend files (ALL HTML, CSS, JS files inside 'public' folder)
 app.use(express.static(path.join(__dirname, "public")));
@@ -32,7 +33,7 @@ app.get("/:page", (req, res) => {
 
 // 📨 Handle form submission via email
 app.post("/send-email", async (req, res) => {
-    const { formType, name, mobile, email, siteLocation, city, message, location } = req.body;
+    const { formType, name, mobile, email, siteLocation, city, message, location, } = req.body;
 
     if (!name || !mobile || !email) {
         return res.status(400).json({ error: "Missing required fields" });
@@ -73,5 +74,5 @@ app.post("/send-email", async (req, res) => {
     }
 });
 
-const PORT = process.env.PORT || 6013;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
