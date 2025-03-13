@@ -1681,6 +1681,154 @@ footer {
 
 
 
+//* General Page Styling */
+.cpackage {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+    text-align: center;
+}
+
+/* Main Wrapper */
+.mathematics {
+    width: 80%;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading */
+h2 {
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Floor & Package Dropdown - Aligning on the Same Line */
+.floor-package-container {
+    display: flex;
+    justify-content: center;  /* Center align the dropdowns */
+    align-items: center;
+    gap: 20px; /* Space between the dropdowns */
+    margin: 20px 0;
+}
+
+.floor-dropdown, .package-dropdown {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-bottom: 20px;
+}
+
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* Table container to center it */
+.table-container {
+    display: flex;
+    justify-content: center; /* Centers the table horizontally */
+    align-items: center;
+    width: 100%;
+    margin-top: 20px; /* Add spacing from top */
+}
+
+/* Table styling */
+table {
+    width: 80%; /* Adjust width similar to DeeJos */
+    max-width: 900px; /* Prevent table from being too wide */
+    border-collapse: collapse;
+    background: #fff;
+    margin: auto; /* Ensures centering */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Adds slight shadow like DeeJos */
+    border-radius: 8px; /* Smooth edges */
+    overflow: hidden;
+}
+
+/* Table header styling */
+th {
+    background: #48a2eb; /* DeeJos yellow header */
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+}
+
+/* Table row and cell styling */
+td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+/* Input fields inside table */
+td input, td select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Styling for the total cost row */
+.total-cost-row {
+    font-weight: bold;
+    background: #f8f8f8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    table {
+        width: 95%; /* Adjust width for mobile */
+    }
+
+    td input, td select {
+        font-size: 12px; /* Adjust input size */
+    }
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Note Styling */
+.note {
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

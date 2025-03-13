@@ -748,6 +748,76 @@
 
 
 
+<h2>Home Construction Cost Calculator (2025).</h2>
+
+<label for="floorsSelect">No. of Floors:</label>
+<select id="floorsSelect">
+    <option value="0">Ground Floor</option>
+    <option value="1">First Floor</option>
+    <option value="2">Second Floor</option>
+    <option value="3">Third Floor</option>
+</select>
+
+    <label for="packageSelect">Package:</label>
+    <select id="packageSelect">
+        <option value="Basic">Basic Package @ 1999/sqft</option>
+        <option value="Standard">Standard Package @ 2299/sqft</option>
+        <option value="Premium">Premium Package @ 2499/sqft</option>
+        <option value="Luxury">Luxury Package @ 2999/sqft</option>
+    </select>
+
+    <table id="costTable">
+        <tr>
+            <th>Work</th>
+            <th>Area</th>
+            <th>Unit</th>
+            <th>Rate</th>
+            <th>Cost</th>
+        </tr>
+        <tbody id="workRows"></tbody>
+        <tr class="work-row">
+            <td>Enter required Built-up Area</td>
+            <td><input type="number" class="area-input" placeholder="Enter Area"></td>
+            <td>sqft</td>
+            <td class="rate-cell">Rs.1999</td>
+            <td class="cost-cell">Rs.0</td>
+        </tr>
+        <tr class="work-row">
+            <td>Size of RCC Water Sump</td>
+            <td><input type="number" class="area-input" placeholder="Enter Size"></td>
+            <td>ltr</td>
+            <td class="rate-cell">Rs.24</td>
+            <td class="cost-cell">Rs.0</td>
+        </tr>
+        <tr class="work-row">
+            <td>Size of Septic Tank</td>
+            <td><input type="number" class="area-input" placeholder="Enter Size"></td>
+            <td>ltr</td>
+            <td class="rate-cell">Rs.24</td>
+            <td class="cost-cell">Rs.0</td>
+        </tr>
+        <tr class="work-row">
+            <td>Plain Compound Wall</td>
+            <td>
+                <input type="number" class="compound-length" placeholder="Length"> x 
+                <input type="number" class="compound-height" placeholder="Height">
+            </td>
+            <td>sqft</td>
+            <td class="rate-cell">Rs.425</td>
+            <td class="cost-cell">Rs.0</td>
+        </tr>
+    </table>
+
+    <p><strong>Total Construction Cost:</strong> <span id="totalCost">Rs. 0</span></p>
+
+
+    
+
+
+
+
+
+
 
 
 
@@ -767,5 +837,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Your custom script -->
   <script src="script.js"></script>
+  <script src="construction-packages.js"></script>
 </body>
 </html>
