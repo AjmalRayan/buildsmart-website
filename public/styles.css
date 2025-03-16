@@ -5,12 +5,14 @@ body {
     }
 
 nav {
-    height: 60px; /* Adjust as needed */
-    padding: 10px 20px; /* Reduce padding */
+    height: auto; /* Adjust as needed */
+    padding: 20px 10px; /* Reduce padding */
     }
 
 .navbar {
         border-bottom: 2px solid #002D62; /* Adjust color to match DeeJos */
+        margin-bottom: 20px; /* Adjust this value for more or less space */
+        padding-bottom: 10px;
     }
     
 
@@ -19,7 +21,16 @@ html, body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    min-height: 100vh; /* Ensures full viewport height */
+    box-sizing: border-box;
     }
+
+    .section {
+        padding: 20px;
+    }
+    
+
+    
 
 
 
@@ -1416,13 +1427,14 @@ footer {
 
 
 
+
+
 .cpackage {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif; /* Consistent font */
     background-color: #f8f8f8;
-    margin: 0;
-    padding: 0;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px; /* Adjusted to a reasonable value */
+    padding: 30px 0px; /* Unified padding */
 }
 
 /* Right-side text alignment fix */
@@ -1440,6 +1452,8 @@ footer {
     margin: 5px 0; /* Add spacing between lines */
     
 }
+
+
 
 
 
@@ -1476,17 +1490,12 @@ footer {
 
 
 /* General Styles */
-.cpackage {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f8f8;
-    text-align: center;
-    margin-top: 100px;
-}
 
 .headline {
     font-size: 28px;
     font-weight: bold;
     margin-bottom: 20px;
+    padding: 10px;
 }
 
 /* Packages Layout */
@@ -1495,7 +1504,7 @@ footer {
     justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 10px;
 }
 
 
@@ -1680,15 +1689,8 @@ footer {
 
 
 
-
-//* General Page Styling */
-.cpackage {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-    text-align: center;
-}
+/*-----------------------------------------------------------------------------------------------*/
+/* General Page Styling */
 
 /* Main Wrapper */
 .mathematics {
@@ -1701,7 +1703,7 @@ footer {
 }
 
 /* Heading */
-h2 {
+ h2 {
     color: #222;
     margin-bottom: 20px;
 }
@@ -1724,7 +1726,7 @@ h2 {
 label {
     font-weight: bold;
     margin-bottom: 5px;
-    margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 select {
@@ -1816,6 +1818,418 @@ input {
     color: #777;
     margin-top: 10px;
 }
+
+
+
+
+
+
+
+/* Construction Process Section */
+
+.process-header {
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px; /* Adds space below the heading */
+}
+
+
+
+
+
+
+
+/* Construction Process Section */
+.construction-process {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 20px;
+    position: relative;
+    text-align: center;
+}
+
+/* Process Title */
+.process-header {
+    position: relative;
+    margin-bottom: 50px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Vertical Timeline Line */
+.construction-process::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 170px; /* Start below the title */
+    height: calc(85% - 2700px); /* Reduce from bottom */
+    width: 4px;
+    background: #cfcccc;
+    transform: translateX(-50%);
+    z-index: 0;
+}
+
+/* Process Steps */
+.process-step {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    position: relative;
+    width: 100%;
+}
+
+/* Alternate Step Alignment */
+.process-step:nth-child(odd) {
+    flex-direction: row;
+    text-align: left;
+}
+
+.process-step:nth-child(even) {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
+/* Step Content Box */
+.step-content {
+    background: #f3e56c;
+    padding: 25px;
+    border-radius: 10px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+/* Step Number */
+.step-number {
+    background: #333;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 5px;
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+/* Swiper Container */
+.swiper-container {
+    width: 100%;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Step Image */
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Connector Circle */
+.process-step::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    width: 16px;
+    height: 16px;
+    background: #c0bfbd;
+    border: 3px solid #a19d9d;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .process-step {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .step-content {
+        width: 90%;
+    }
+
+    .process-step::after {
+        display: none; /* Hide connector dots on small screens */
+    }
+
+    .construction-process::before {
+        left: 20px; /* Move the timeline to the left */
+    }
+}
+
+
+
+
+.process-section {
+    padding: 50px 20px;
+}
+
+.process-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.process-subtitle {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.process-steps {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.process-steps::before {
+    content: "";
+    position: absolute;
+    top: 25px;
+    left: 50%;
+    width: 80%;
+    height: 2px;
+    background: #ccc;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.step {
+    flex: 1;
+    min-width: 120px;
+    max-width: 150px;
+    text-align: center;
+    position: relative;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+.step-circle {
+    width: 50px;
+    height: 50px;
+    background: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    margin: 0 auto 10px;
+    border: 3px solid #ccc;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.step-circle.active {
+    background: #F8C144;
+    border-color: #000;
+    color: #fff;
+}
+
+/* Image Container */
+.process-image-container {
+    margin-top: 40px;
+}
+
+#process-image {
+    width: 250px;
+    height: 250px;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+
+/* Align text to left like DeeJos */
+.paragraph {
+    text-align: left;
+    max-width: 1200px; /* Adjust width */
+    margin: 0 auto; /* Center container */
+    margin-bottom: 40px;
+    position: relative;
+    padding: 20px;
+    background: white; /* Keep text background */
+    z-index: 2;
+}
+
+/* Angled yellow background trim */
+.paragraph::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 100%;
+    height: 100%;
+    background: #f3e56c; /* Yellow shade */
+    transform: skewX(-10deg); /* Create angle effect */
+    z-index: -1;
+}
+
+/* Style for heading */
+h1, h2 {
+    font-weight: bold;
+    font-size: 28px;
+}
+
+/* Style for paragraphs */
+.paragraph p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+
+
+
+
+/* Align text to left like */
+.why-choose-us {
+    background-color: linear-gradient(to right, #f8f9fa, #e9ecef);
+    text-align: center;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 50px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Adds a slight shadow for depth */
+}
+
+.why-choose-us h2 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #222;
+    text-transform: uppercase;
+}
+
+.why-choose-us h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #333;
+}
+
+.why-choose-us p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #444;
+    text-align: justify;
+    text-align: left; /* Ensures bullet points align properly */
+    display: inline-block;
+}
+
+.why-choose-us ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.why-choose-us ul li {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+    position: relative;
+    padding-left: 30px;
+    font-weight: 500;
+    color: #222;
+}
+
+.why-choose-us ul li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 4px;
+    color: #ffb703; /* Yellow-orange checkmark */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .why-choose-us {
+        padding: 30px 15px;
+        max-width: 90%;
+    }
+
+    .why-choose-us h2 {
+        font-size: 26px;
+    }
+
+    .why-choose-us p {
+        text-align: left; /* Keeps readability better on small screens */
+    }
+}
+
+
+
+
+
+/* General Styles */
+
+/* Centered main headings */
+.faq-item h2 {
+    text-align: left;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* Left-aligning subheadings and content */
+.faq, .content {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto; /* Centers the content */
+}
+
+/* Subheadings */
+.faq-item h3 {
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+/* Paragraph Styling */
+
+/* Add spacing between FAQ items */
+.faq-item p {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #535151;
+    margin-bottom: 30px;
+}
+
+
+/*-------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
 
 
 

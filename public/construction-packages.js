@@ -146,4 +146,5 @@ document.addEventListener("DOMContentLoaded", function () {
     packageSelect.addEventListener("change", updateRates);
 
     updateTable(); // ✅ Initialize on page load
+    
 });
