@@ -2224,6 +2224,282 @@ h1, h2 {
 
 
 /*-------------------------------------------------------------------------------------------------------------*/
+.dpackage {
+    font-family: 'Poppins', sans-serif; /* Consistent font */
+    background-color: #f8f8f8;
+    text-align: center;
+    margin-top: 50px; /* Adjusted to a reasonable value */
+    padding: 30px 0px; /* Unified padding */
+}
+
+
+/* Table Header Styling */
+.table-header {
+    background-color: #fffdfd;
+    color: rgb(105, 102, 102);
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    padding: 15px;
+    border-radius: 5px 5px 0 0;
+}
+
+/* General Table Styling */
+.table {
+    width: 90%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin: 20px auto;
+    background-color: white;
+}
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* First column (Feature names) styling */
+.table th:first-child, .table td:first-child {
+    background-color: #e1ebf5;
+    font-weight: normal;
+    text-align: left;
+    
+}
+
+/* Tick and Cross Styling */
+.tick {
+    color: #28a745; /* Green color */
+    font-weight: bold;
+    font-size: 20px;
+}
+.cross {
+    color: #dc3545; /* Red color */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Package Header Colors - Fixing the Conflict */
+.table th:not(:first-child) { 
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+    padding: 15px;
+}
+
+/* Assign Specific Colors to Each Package */
+.table th.Basic { background-color: #009688 !important; }
+.table th.Standard { background-color: #65b872 !important; }
+.table th.Premium { background-color: #ffa41d !important; }
+.table th.Ultra-Premium { background-color: #F44336 !important; }
+
+/* Delivery Time Row Styling */
+.delivery-time td {
+    background-color: #b9fcf8; /* Light Gray Background */
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+}
+.delivery-time td:first-child {
+    text-align: left;
+    background-color: #b9fcf8; /* Slightly darker shade for the first column */
+}
+
+
+
+
+.note-section {
+    margin-top: 20px;  /* Adds space between the table and note */
+    padding: 50px;
+    background-color: #f9f9f9; /* Light background for better visibility */
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: left;
+    padding-top: 10px;
+}
+
+.note-section p {
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.note-section ul {
+    list-style-type: disc;
+    padding-left: 30px;
+}
+
+
+
+
+/* General Styles */
+.our-design {
+    text-align: center;
+    padding: 80px 0;
+}
+
+.our-design h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Grid Layout */
+.design-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Design Item Box */
+.design-item {
+    width: 45%;
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header Styles */
+.design-header {
+    background: #FFC107;
+    padding: 10px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.design-header span {
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+/* Image Slider */
+.design-image-slider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.design-image-slider img {
+    width: 100%;
+    height: 250px; /* Fixed height */
+    max-height: 300px;
+    object-fit: contain; /* Ensures images maintain aspect ratio */
+    border-radius: 5px;
+    display: none; /* Hide all images initially */
+}
+
+/* Ensure the first image is visible */
+.design-image-slider img:first-child {
+    display: block;
+}
+
+
+.design-title {
+    display: flex;
+    align-items: center;
+    max-width: 800px; /* Adjust width as needed */
+    margin: 0 auto; /* Center align */
+    text-align: left;
+}
+
+.design-title .line {
+    width: 10px; /* Thin blue line */
+    height: 60px; /* Line height */
+    background-color: #0056b3; /* Blue color */
+    margin-right: 15px; /* Space between line and text */
+}
+
+.design-title p {
+    font-size: 16px;
+    color: #5a5454;
+    line-height: 1.8;
+}
+
+
+
+
+/* Main container */
+.design-intro {
+    max-width: 1200px;  /* Match DeeJos width */
+    margin: 0 auto;  /* Center the whole section */
+    padding: 50px 20px;  /* Space around the content */
+}
+
+/* Headings */
+.design-intro h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 10px;
+    text-align: left;  /* Left-align title */
+}
+
+.design-intro h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Paragraphs */
+.design-intro p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+    text-align: left;  /* Force text to be left-aligned */
+    max-width: 900px;  /* Control width like DeeJos */
+    margin-bottom: 15px;
+}
+
+/* Highlighted Link */
+.design-intro a {
+    color: #0056b3;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.design-intro a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.call-us-section {
+    background-color: #f2c94c; /* Yellow background */
+    text-align: center;
+    padding: 30px 0;
+}
+
+.call-us-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #222; /* Dark text */
+    margin-bottom: 5px;
+}
+
+.call-us-section p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+}
+
+
+
+
+
 
 
 
