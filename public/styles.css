@@ -69,7 +69,7 @@ html, body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
@@ -89,12 +89,15 @@ html, body {
     font-family: "Montserrat", sans-serif !important;
     padding-top: 7%;
     font-weight: 700;
-    color: #ffffff;
-    text-shadow: 3px 3px 30px rgba(255, 255, 255, 0.9),
-                 1px 1px 10px rgba(255, 255, 255, 0.8);
+    color: #ffffff !important;
     letter-spacing: 1px;
     margin-bottom: 30px;
 }
+
+.hero-section .slideshow img {
+    filter: brightness(80%); /* Reduce brightness */
+}
+
 
 .hero-tagline {
     position: absolute;
@@ -105,10 +108,8 @@ html, body {
     font-size: 26px;
     font-weight: 700;
     font-family: "Montserrat", sans-serif !important;
-    text-shadow: 2px 2px 12px rgba(255, 255, 255, 0.8),
-                 2px 2px 8px rgba(0, 0, 0, 0.8);
     letter-spacing: 0.5px;
-    color: #FFFFFF;
+    color: #ffffff !important;
     line-height: 1.5;
     margin: 0;
     padding: 0;
@@ -2431,48 +2432,38 @@ h1, h2 {
 
 /* Main container */
 .design-intro {
-    max-width: 1200px;  /* Match DeeJos width */
-    margin: 0 auto;  /* Center the whole section */
-    padding: 50px 20px;  /* Space around the content */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
 }
 
-/* Headings */
-.design-intro h1 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #000;
-    margin-bottom: 10px;
-    text-align: left;  /* Left-align title */
+/* Flex container */
+.design-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px; /* Add spacing between text and image */
 }
 
-.design-intro h2 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 20px;
-    text-align: left;
+/* Text section */
+.design-text {
+    width: 55%; /* Adjust width for better spacing */
+    text-align: left; /* Ensure text aligns to the left */
 }
 
-/* Paragraphs */
-.design-intro p {
-    font-size: 16px;
-    color: #333;
-    line-height: 1.6;
-    text-align: left;  /* Force text to be left-aligned */
-    max-width: 900px;  /* Control width like DeeJos */
-    margin-bottom: 15px;
+/* Image section */
+.design-image {
+    width: 40%;
+    text-align: right;
 }
 
-/* Highlighted Link */
-.design-intro a {
-    color: #0056b3;
-    font-weight: bold;
-    text-decoration: none;
+.design-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
-.design-intro a:hover {
-    text-decoration: underline;
-}
+
 
 
 
@@ -2494,6 +2485,249 @@ h1, h2 {
     font-size: 24px;
     font-weight: bold;
     color: #222;
+}
+
+
+
+
+
+
+.interiorr {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Staggered Items */
+.staggered-items {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.staggered {
+    opacity: 0;
+    transform: translateY(20px);
+    background: #ffbb00;
+    color: white;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Apply staggered animation delay */
+.staggered:nth-child(1) { transition-delay: 0.2s; }
+.staggered:nth-child(2) { transition-delay: 0.4s; }
+.staggered:nth-child(3) { transition-delay: 0.6s; }
+.staggered:nth-child(4) { transition-delay: 0.8s; }
+.staggered:nth-child(5) { transition-delay: 1.0s; }
+.staggered:nth-child(6) { transition-delay: 1.2s; }
+
+/* When item is visible */
+.staggered.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+.counter-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 50px 10px;
+    background: #464e49;
+    color: #fff;
+}
+
+.counter-box {
+    margin: 20px;
+    padding: 20px;
+    width: 200px;
+    background: #ffcc00;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.counter-box:hover {
+    transform: scale(1.1);
+}
+
+.counter-box h2 {
+    font-size: 40px;
+    margin: 0;
+    color: #000;
+}
+
+.counter-box p {
+    font-size: 18px;
+    margin-top: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+
+
+
+
+
+.pkt {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('designs/home-interior1.avif') no-repeat center center/cover;
+    display: flex;
+    justify-content: space-between; /* Space between text and form */
+    align-items: center;
+    padding: 50px;
+    color: #fff;
+}
+
+.pkt-text {
+    flex: 1;
+    max-width: 50%;
+    text-align: left; /* Align only the text to the left */
+    padding-left: 40%;
+    padding-bottom: 15%;
+}
+
+.pkt-text h1 {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: black;
+}
+
+.pkt-text .highlight {
+    color: red;
+}
+
+.pkt-form {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center; /* Center only form text */
+}
+.pkt-form h2 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.pkt-form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.pkt-form button {
+    width: 100%;
+    padding: 12px;
+    background: #ff4d4d;
+    color: white;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.pkt-form button:hover {
+    background: #d43f3f;
+}
+
+
+
+
+
+
+.interior-solutions {
+    text-align: center;
+    padding: 50px;
+}
+
+.interior-solutions h2 {
+    font-size: 28px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+.interior-solutions h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: red;
+    margin: 8px auto 0;
+}
+
+.solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.solution-box {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.solution-box:hover {
+    border-color: red;
+}
+
+.solution-box img {
+    width: 100px;
+    height: 100px;
+}
+
+.solution-box p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.consult-btn {
+    background: #ff4d4d;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.consult-btn:hover {
+    background: #d43f3f;
 }
 
 
