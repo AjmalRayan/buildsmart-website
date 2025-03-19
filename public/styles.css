@@ -1124,28 +1124,40 @@ header h1 {
 
 
 
+/* Team Section Styling */
 .team {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px; /* Space between team members */
+    padding: 50px 20px;
+    background: #f4f4f4;
 }
 
+/* Team Member Container */
 .team-member {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 20px; /* Adjust space between image and text */
+    gap: 30px; /* Adjust space between image and text */
     width: 100%;
     max-width: 1000px;
+    padding: 30px;
+    background: #fff;                  /* White card background */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);  /* Soft shadow */
+    border-radius: 12px;               /* Rounded corners */
+    transition: transform 0.4s, box-shadow 0.4s;
 }
 
+/* Image on left, text on right */
 .team-member.left {
-    flex-direction: row; /* Image on left, text on right */
+    flex-direction: row;
+    box-shadow: 0 10px 30px rgba(0, 255, 21, 0.7);
 }
 
+/* Image on right, text on left */
 .team-member.right {
-    flex-direction: row; /* Image on right, text on left */
+    flex-direction: row-reverse;
 }
 
 .team-member img {
@@ -1153,23 +1165,33 @@ header h1 {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
+    transition: box-shadow 0.5s ease-in-out;
 }
+
+
+/* Glow Effect on Hover */
+.team-member:hover img {
+    transform: scale(1.05);                     /* Slight zoom */
+    box-shadow: 0 20px 50px rgba(0, 162, 255, 0.8);  /* Blue glowing effect */
+}
+
 
 /* Member Info */
 .member-info {
-    flex: 1; /* Takes up remaining space */
+    flex: 1; 
     text-align: left;
 }
 
+/* Headings and Description */
 .member-info h2 {
     margin: 0;
     font-size: 24px;
-    color: #222;
+    color: #002D62;                 /* Dark blue heading color */
 }
 
 .position {
     font-size: 18px;
-    color: #777;
+    color: #ffba00;                  /* Yellow position color */
     margin: 5px 0;
 }
 
@@ -1179,10 +1201,16 @@ header h1 {
     line-height: 1.6;
 }
 
-/* Make it mobile-friendly */
+/* Hover Effect for Card */
+.team-member:hover {
+    transform: translateY(-10px);          /* Lift card on hover */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+/* Mobile-Friendly Layout */
 @media (max-width: 768px) {
     .team-member {
-        flex-direction: column !important; /* Stack image & text vertically */
+        flex-direction: column !important;   /* Stack vertically */
         text-align: center;
     }
 
@@ -2597,16 +2625,19 @@ h1, h2 {
     align-items: center;
     padding: 50px;
     color: #fff;
+    box-sizing: border-box;  /* Ensure consistent sizing */
 }
 
+/* Text Section */
 .pkt-text {
     flex: 1;
     max-width: 50%;
-    text-align: left; /* Align only the text to the left */
+    text-align: left;
     padding-left: 40%;
     padding-bottom: 15%;
 }
 
+/* Heading Styling */
 .pkt-text h1 {
     font-size: 50px;
     font-weight: 700;
@@ -2618,14 +2649,18 @@ h1, h2 {
     color: red;
 }
 
+/* Form Styling */
 .pkt-form {
     background: #fff;
     padding: 25px;
     border-radius: 10px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
     width: 300px;
-    text-align: center; /* Center only form text */
+    text-align: center;
+    z-index: 2; /* Ensure form appears above */
+    transition: 0.3s; /* Smooth transition */
 }
+
 .pkt-form h2 {
     font-size: 18px;
     text-align: center;
@@ -2655,6 +2690,44 @@ h1, h2 {
 .pkt-form button:hover {
     background: #d43f3f;
 }
+
+/* ✅ Mobile Optimization */
+@media (max-width: 1024px) {
+    .pkt {
+        flex-direction: column;  /* Stack text and form vertically */
+        justify-content: center; 
+        align-items: center;
+        padding: 80px 20px; /* Adjust padding */
+        height: auto;  /* Let content determine height */
+    }
+
+    .pkt-text {
+        max-width: 100%;
+        text-align: center; 
+        padding: 0; /* Remove left padding */
+        margin-bottom: 30px;
+    }
+
+    .pkt-text h1 {
+        font-size: 30px; /* Smaller text size for mobile */
+    }
+
+    .pkt-form {
+        width: 90%;
+        max-width: 400px;
+        margin: 0 auto;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .pkt-form input,
+    .pkt-form button {
+        width: 100%;
+    }
+}
+
+  
+
+
 
 
 
@@ -2732,6 +2805,159 @@ h1, h2 {
 
 
 
+
+
+/* Centered 3D Slider Container */
+.slider-container {
+    position: relative;
+    width: 100vw;         /* Full Width */
+    height: 100vh;        /* Full Height */
+    display: flex;         /* Centering */
+    justify-content: center;
+    align-items: center;
+    perspective: 1800px;   /* 3D depth */
+    overflow: hidden;      /* Prevents overflow */
+}
+
+/* Larger 3D Slider */
+.slider {
+    position: relative;
+    width: 100%;
+    height: 600px;        /* Consistent Height */
+    display: flex;
+    justify-content: center; /* Center the slides */
+    align-items: center;
+    transform-style: preserve-3d;
+    animation: rotateSlider 20s infinite linear;
+}
+
+/* Larger Individual Slides */
+.slide {
+    position: absolute;
+    width: 500px;         /* Larger width */
+    height: 600px;        /* Larger height */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.7); 
+    transition: transform 0.5s;
+}
+
+/* Circular positioning */
+.slide:nth-child(1) {
+    transform: rotateY(0deg) translateZ(600px);
+}
+.slide:nth-child(2) {
+    transform: rotateY(72deg) translateZ(600px);
+}
+.slide:nth-child(3) {
+    transform: rotateY(144deg) translateZ(600px);
+}
+.slide:nth-child(4) {
+    transform: rotateY(216deg) translateZ(600px);
+}
+.slide:nth-child(5) {
+    transform: rotateY(288deg) translateZ(600px);
+}
+
+/* Hover Effect */
+.slide:hover {
+    transform: scale(1.1) rotateY(360deg);
+    transition: 0.5s ease;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.9);
+}
+
+/* Smooth Animation */
+@keyframes rotateSlider {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+
+
+
+
+
+
+
+.saq-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.saq-header {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.saq-subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 40px;
+}
+
+.saq-item {
+    border-bottom: 1px solid #ccc;
+    padding: 20px 0;
+}
+
+.saq-item:last-child {
+    border-bottom: none;
+}
+
+.saq-question {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.saq-answer {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #555;
+}
+
+.saq-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.saq-list li {
+    margin-bottom: 10px;
+}
+
+.saq-list li strong {
+    font-weight: bold;
+    color: #000;
+}
+.saq-para {
+    font-weight: normal;
+    color: #070707;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+    .saq-header {
+        font-size: 28px;
+    }
+    .saq-question {
+        font-size: 18px;
+    }
+    .saq-answer {
+        font-size: 14px;
+    }
+}
 
 
 
