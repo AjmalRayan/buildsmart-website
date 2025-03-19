@@ -52,7 +52,7 @@
         <ul class="navbar-nav ms-auto text-end">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
-          <li class="nav-item"><a class="nav-link active" href="construction-package.html">Construction Package</a></li>
+          <li class="nav-item"><a class="nav-link" href="construction-package.html">Construction Package</a></li>
           <li class="nav-item"><a class="nav-link" href="design-package.html">Design Package</a></li>
           <li class="nav-item"><a class="nav-link" href="works.html">Our Works</a></li>
           <li class="nav-item"><a class="nav-link" href="interior.html">Interior</a></li>
@@ -63,18 +63,52 @@
   </nav>
   <!-- NAVBAR END -->
 
-  <!-- PAGE HERO SECTION -->
-  <section class="hero-section text-center text-white d-flex align-items-center justify-content-center" style="background: url('images/construction-bg.jpg') center/cover no-repeat; height: 300px;">
-    <h1 class="fw-bold">Construction Package</h1>
-  </section>
 
+  <section id="contact" class="contact-section">
+    <div class="connected">
+        <h2 class="contact-title">Get In Touch</h2>
+        <p class="contact-description">We'd love to hear from you! Fill out the form below and we'll get back to you shortly.</p>
+        
+        <!-- Floating 3D Icons -->
+        <div class="floating-icon email-icon"></div>
+        <div class="floating-icon phone-icon"></div>
+        <div class="floating-icon location-icon"></div>
 
-  <!-- Example of Animated Sections -->
-<div data-aos="fade-up">
-  <h2>Our Projects</h2>
-  <p>We build with precision and care.</p>
-</div>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
 
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </div>
+</section>
+
+<!-- WhatsApp Button (Vertically Centered Right Side) -->
+<a href="https://wa.me/918754709319" class="whatsapp-float" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Phone Button (Below WhatsApp) -->
+<a href="tel:+918754709319" class="phone-float">
+<i class="fa-solid fa-phone"></i>
+</a>
+
+ 
+
+<div id="footer-placeholder"></div>
+<script src="footer.js"></script>
 
 
   <!-- Bootstrap JS (bundle includes Popper) -->
@@ -85,5 +119,6 @@
     AOS.init();
   </script>
   <script src="script.js"></script>
+  <script src="contact.js"></script>
 </body>
 </html>
