@@ -3192,28 +3192,35 @@ input:focus, textarea:focus {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 60px 0;
+    gap: 20px; /* Add consistent gap */
 }
 
+/* Project Card */
 .project-card {
-    width: 30%;
-    margin: 20px 0;
+    flex: 1 1 calc(33.33% - 20px);  /* 3 images per row on PC */
+    max-width: calc(33.33% - 20px);
     position: relative;
     overflow: hidden;
     transition: transform 0.5s ease;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    aspect-ratio: 4 / 3;  /* Consistent aspect ratio for all images */
 }
 
+/* Project Card Images (Uniform Size) */
 .project-card img {
     width: 100%;
-    height: 250px;  /* Fixed height for uniformity */
-    object-fit: cover; /* Crop the image to fit */
+    height: 100%;
+    object-fit: cover;  /* Ensure all images fit the same size */
     border-radius: 10px;
+    transition: transform 0.5s;
 }
 
 .project-card:hover img {
     transform: scale(1.1);
 }
 
+/* Card Content */
 .card-content {
     position: absolute;
     bottom: 0;
@@ -3246,6 +3253,20 @@ input:focus, textarea:focus {
     width: 0;
     background: #ffc107;
     transition: width 0.25s;
+}
+
+/* Mobile View: Display as Column */
+@media (max-width: 768px) {
+    .projects {
+        flex-direction: column;       /* Switch to column layout */
+        align-items: center;          /* Center align cards */
+    }
+
+    .project-card {
+        flex: 1 1 100%;
+        max-width: 90%;               /* Consistent width */
+        aspect-ratio: 4 / 3;          /* Maintain the same image size */
+    }
 }
 
 /* Animations */
