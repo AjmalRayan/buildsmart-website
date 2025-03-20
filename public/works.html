@@ -63,16 +63,152 @@
   </nav>
   <!-- NAVBAR END -->
 
-  <!-- 3D Slider Container -->
-<div class="slider-container">
-  <div class="slider">
-      <div class="slide" style="background-image: url('albums/Groundbreaking.jpeg');"></div>
-      <div class="slide" style="background-image: url('designs/home-why2.webp');"></div>
-      <div class="slide" style="background-image: url('designs/interior.jpg');"></div>
-      <div class="slide" style="background-image: url('images/interior2.jpeg');"></div>
-      <div class="slide" style="background-image: url('images/interior4.jpeg');"></div>
+  <section class="our-works">
+    <!-- Hero Section -->
+    <div class="aero">
+        <div class="aero-content">
+            <h1>Our <span class="highlight">Works</span></h1>
+            <p>Explore our top construction and interior projects,<br>from residential homes to large-scale commercial buildings and renovations.</p>
+        </div>
+    </div>
+  
+    <!-- Projects Section -->
+    <section class="projects">  
+        <div class="project-card">
+            <img src="images/luxury_villa1.jpeg" alt="Residential Villa">
+            <div class="card-content">
+                <h3>Residential Villa</h3>
+                <p>Pattukkottai | Completed: 2025</p>
+            </div>
+        </div>
+  
+        <div class="project-card">
+            <img src="designs/Elevation.jpg" alt="Commercial Complex">
+            <div class="card-content">
+                <h3>Residential Villa</h3>
+                <p>Tanjore | Completed: 2023</p>
+            </div>
+        </div>
+  
+        <div class="project-card">
+            <img src="albums/lightss.jpeg" alt="Renovation Project">
+            <div class="card-content">
+                <h3>Residential Villa</h3>
+                <p>Adirampattinam | Completed: 2024</p>
+            </div>
+        </div>
+  
+        <div class="project-card">
+            <img src="images/Elevation2.jpeg" alt="Renovation Project">
+            <div class="card-content">
+                <h3>Renovation Project</h3>
+                <p>Adirampattinam | Completed: 2022</p>
+            </div>
+        </div>
+  
+        <div class="project-card">
+            <img src="images/Renovation.jpeg" alt="Renovation Project">
+            <div class="card-content">
+                <h3>First Floor Project</h3>
+                <p>Pattukkottai | Completed: 2024</p>
+            </div>
+        </div>
+
+
+        <div class="project-card">
+          <img src="images/Elevation.jpeg" alt="Renovation Project">
+          <div class="card-content">
+              <h3>Residential Villa</h3>
+              <p>Madukkur | Completed: 2024</p>
+          </div>
+      </div>
+    </section> <!-- Close the .projects container -->
+  </section>
+
+
+
+
+
+  <section class="before-after-section">
+    <h2 class="section-topic">Before & After</h2>
+
+    <div class="image-comparison-container">
+        <div class="image-wrapper">
+            <!-- Before Image -->
+            <div class="before-container">
+                <img src="albums/Reworks1.jpeg" alt="Before" class="before-image">
+            </div>
+
+            <!-- After Image -->
+            <div class="after-container">
+                <img src="albums/before.jpeg" alt="After" class="after-image">
+            </div>
+
+            <!-- Slider -->
+            <div class="slider-bar"></div>
+            <input type="range" min="0" max="100" value="50" class="rider">
+        </div>
+    </div>
+</section>
+
+
+
+<!-- WhatsApp Button (Vertically Centered Right Side) -->
+<a href="https://wa.me/918754709319" class="whatsapp-float" target="_blank">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<!-- Phone Button (Below WhatsApp) -->
+<a href="tel:+918754709319" class="phone-float">
+  <i class="fa-solid fa-phone"></i>
+</a>
+
+
+  
+
+
+
+
+
+
+
+
+  <!-- Scroll-triggered Progress Bar -->
+  <div class="progress-container">
+      <div class="progress-bar" id="progress-bar"></div>
   </div>
-</div>
+</section>
+
+
+
+
+<section class="stats-section">
+  <div class="stats-content">
+      <div class="stat-boxx">
+          <h2 class="counter" data-target="15">0</h2>
+          <p>Completed Projects</p>
+      </div>
+      <div class="stat-boxx">
+          <h2 class="counter" data-target="14">0</h2>
+          <p>Happy Clients</p>
+      </div>
+      <div class="stat-boxx">
+          <h2 class="counter" data-target="04">0</h2>
+          <p>Years of Experience</p>
+      </div>
+  </div>
+
+  <!-- Sliding Text Animation -->
+  <div class="sliding-text">
+      <p>QUALITY • TRUST • INNOVATION • EXCELLENCE • PRECISION • CUSTOMER SATISFACTION</p>
+  </div>
+
+  <!-- Background Animation -->
+  <div class="wave-container">
+      <div class="wave"></div>
+      <div class="wave"></div>
+  </div>
+</section>
 
 
 
@@ -117,6 +253,7 @@
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 <script src="script.js"></script>
 <script src="interior3d.js"></script>
+<script src="contact-animation.js"></script>
   <!-- Initialize AOS -->
   <script>
     AOS.init();

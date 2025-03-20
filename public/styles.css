@@ -3151,6 +3151,350 @@ input:focus, textarea:focus {
 
 
 
+/*-------------------------------------------------------------------------------------------------------------*/
+
+/* Our Works Section */
+.our-works {
+    background: #f4f4f4;
+    padding: 0;
+    margin: 0;
+}
+
+/* Hero Section */
+.aero {
+    height: 100vh;
+    background: url('images/constructions-one.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.aero-content {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.aero h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.aero p {
+    font-size: 1.5rem;
+}
+
+/* Projects Section */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 60px 0;
+}
+
+.project-card {
+    width: 30%;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 250px;  /* Fixed height for uniformity */
+    object-fit: cover; /* Crop the image to fit */
+    border-radius: 10px;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.5s;
+}
+
+.project-card:hover .card-content {
+    transform: translateY(0);
+}
+
+/* Scroll-triggered Progress Bar */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #ccc;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.progress-bar {
+    height: 8px;
+    width: 0;
+    background: #ffc107;
+    transition: width 0.25s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* Section Styling */
+.stats-section {
+    position: relative;
+    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+    color: #fff;
+    padding: 80px 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Stats Container */
+.stats-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.stat-boxx {
+    background: #2e2e2e;
+    padding: 40px 60px;
+    border-radius: 12px;
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.stat-boxx:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.6); /* Golden glow effect */
+}
+
+.stat-boxx h2 {
+    font-size: 64px;
+    margin: 0;
+    color: #ffd700; /* Gold */
+    transition: color 0.3s;
+}
+
+.stat-boxx:hover h2 {
+    color: #ffffff; /* White on hover */
+}
+
+.stat-boxx p {
+    font-size: 18px;
+    margin: 10px 0 0;
+    color: #ccc;
+}
+
+/* Sliding Text Animation */
+.sliding-text {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    margin: 40px 0;
+    background: #000;
+    color: #ffd700; /* Gold */
+    padding: 20px 0;
+    font-size: 22px;
+    letter-spacing: 2px;
+}
+
+.sliding-text p {
+    display: inline-block;
+    animation: slide 12s linear infinite;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Wave Animation */
+.wave-container {
+    position: relative;
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+}
+
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 100%;
+    background: rgba(255, 215, 0, 0.1); /* Light gold waves */
+    opacity: 0.7;
+    animation: wave 6s linear infinite;
+}
+
+.wave:nth-child(1) {
+    top: 0;
+    animation-delay: 0s;
+}
+
+.wave:nth-child(2) {
+    top: 50%;
+    animation-delay: 3s;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(-25%) translateY(10px);
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .stats-content {
+        flex-direction: column;
+    }
+
+    .stat-box {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+
+    .sliding-text {
+        font-size: 18px;
+    }
+}
+
+
+
+
+
+
+/* Before & After Section */
+.before-after-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: #f4f4f4;
+}
+
+.section-topic {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* Image Comparison Container */
+.image-comparison-container {
+    position: relative;
+    max-width: 1200px;
+    height: 600px; /* Ensure the section has height */
+    margin: 0 auto;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+/* Image Wrapper */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Before & After Images */
+.before-container {
+    position: absolute;
+    width: 50%;  /* Show only half of the Before image by default */
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+    transition: width 0.3s ease;
+}
+
+.after-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 5;  /* Ensure the After image stays behind */
+}
+
+.before-image, .after-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slider */
+.slider-bar {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    height: 100%;
+    background: #ffa500;  /* Slider line color */
+    z-index: 15;  /* Ensure slider is on top */
+    pointer-events: none;
+}
+
+.rider {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    height: 100%;
+    z-index: 20;  /* Highest z-index */
+    opacity: 0;
+    cursor: ew-resize;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .image-comparison-container {
+        height: 400px;  /* Adjust height for smaller screens */
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
