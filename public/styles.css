@@ -213,9 +213,9 @@ html, body {
     background: rgb(255, 255, 0); /* Highlight active dot */
 }
 
-        /* Location Section Styling */
+/* Location Section Styling */
 .locations {
-    background-color: rgb(255, 255, 250); /* Yellow background */
+    background-color: rgb(255, 255, 250); /* Light background */
     padding: 30px 0;
     text-align: center;
 }
@@ -226,10 +226,12 @@ html, body {
     margin-bottom: 20px;
 }
 
+/* Default (Desktop View) */
 .location-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .location-card {
@@ -240,11 +242,34 @@ html, body {
     font-size: 1.5em;
     color: #413f3f;
     transition: transform 0.3s ease-in-out;
+    min-width: 180px;
+    text-align: center;
 }
 
 .location-card:hover {
     transform: translateY(-10px);
 }
+
+/* Mobile View */
+@media screen and (max-width: 768px) {
+    .locations h2 {
+        font-size: 1.5em;
+        padding: 0 10px;
+    }
+
+    .location-cards {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .location-card {
+        width: 80%;
+        padding: 15px 20px;
+        font-size: 1.2em;
+    }
+}
+
 
 
         
